@@ -1,0 +1,33 @@
+<!--https://www.cnblogs.com/clschao/articles/10082587.html-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*选择的继承-优先级最低=0*/
+        body{color:red;}
+        /*类选择器 优先级=10，不同优先级高的生效，同级后写生效*/
+        .c1 {color:blue;}
+        /*元素选择器优先级=1*/
+        div {color:green;}
+        /*id选择器优先级=100*/
+        #优先级100{color:yellow;}
+        /*内联选择器1000-写在标签内*/
+        /*!important优先级最高，万不得而不用*/
+        div {color:gold !important;}
+
+
+    </style>
+</head>
+<body>
+<div class="c1" id="优先级100" style="color:black;">
+    我是div
+    <p class="c1">我是p</p>
+</div>
+
+
+</body>
+</html>

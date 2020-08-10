@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .c1 {
+            background-color: red;
+            height:100px;
+            width:100px;
+         }
+        .c2 {
+            background-color: green;
+            height:100px;
+            width:100px;
+/*1.position-relative-相以定位，相对自已位置进行位置定位，原点为：左上角点，相当设置原点，原位置保留，后跟top|left|right|bottom|top*/
+/*            position:relative;*/
+/*            left:20px;*/
+/*            !*top:100px;*!*/
+/*            bottom:20px;*/
+
+         }
+        .c3 {
+/*2.position-绝对定位-原位置不保留,按祖先标签设的relative作原点，如无按body标签的上边框距离*/
+            background-color: blue;
+            height:100px;
+            width:100px;
+            position:absolute;
+            left:20px;
+            top:20px;
+
+        }
+        .c4 {
+            background-color:yellow;
+            height:1000px;
+            width:100px;
+         }
+       .ccc {
+            background-color:purple;
+            height:100px;
+            width:100px;
+         }
+       /*父级标签设了相对位置，子级按此为原站*/
+        .cc{
+             position:relative;
+            left:100px;
+        }
+ /*3.固定定位，相对窗口位置*/
+       .s1 {
+            height:40px;
+            width:400px;
+           background-color:blue;
+
+            position:fixed;
+            left:50px;
+            bottom:50px;
+
+           /*内容水平居中*/
+           text-align:center;
+           /*垂直居中-高度设成与边框高度相同*/
+           line-height:40px;
+           /*去掉a标签下划线*/
+           text-decoration:none;
+
+
+        }
+        .s1 a {
+            color:white;
+            /*去掉a标签自带的下划线*/
+           text-decoration:none;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+<div id="锚点顶">我是顶部-锚点示例</div>
+<div class="ccc">我是ccc</div>
+<div class="cc">
+    <div class="c1">
+        我是c1
+    </div>
+
+      <div class="c2">
+        我是c2
+    </div>
+    <div class="c3">
+       我是c3
+    </div>
+    <div class="c4">
+       我是c4
+    </div>
+</div>
+<span class="s1">
+<!--    锚点设置有两种方式name|id-->
+    <a href="#锚点顶">我是a相对屏幕固定|回到顶部-锚点设置</a>
+</span>
+
+</body>
+</html>

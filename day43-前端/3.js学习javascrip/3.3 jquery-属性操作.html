@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="c1"></div>
+性别：
+<input type="radio" id="r1"  >男
+<input type="radio" id="r2" checked="true">女
+
+</body>
+<script src="jquery.js"></script>
+<script>
+// 1.属性操作  .attr 方法
+    // 单个设置属性
+    $('.c1').attr('xx','oo')
+    // 多个设置属性-字典格式
+     $('.c1').attr({'x1':'o1','x2':'o2'})
+    // 查看属性
+     $('.c1').attr('x1');
+    // 删除属性
+    $('.c1').removeAttr('x1');
+// 2.属性操作  .prop 方法--有些版本jquery设input |select| 中的 disabled| checked|属性 .attr无效要用.prop
+//     读
+    $('#r2').prop('checked')
+         // -->true
+    // 写--格式true|false 不加引号
+    $(':radio').eq(0).prop('checked',true)
+     $(':radio').eq(1).prop('checked',false)
+</script>
+</html>

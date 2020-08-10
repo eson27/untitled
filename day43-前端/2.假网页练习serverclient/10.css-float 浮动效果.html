@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+/*1.float-源于word的文字环绕效果，块级标签不独占一行*/
+/*浮动后出现父级标签塌陷问题-高度由子标签之和变为0->解决方法-单独设父级标签高度|c3设清除浮动，一般不用|在父级标签新加类+伪元素选择器-清除浮动*/
+
+        .c1 {
+            background-color:red;
+            height:200px;
+            width:200px;
+            float:left;
+        }
+        .c2{
+            background-color:blue;
+            height:200px;
+            width:200px;
+            float:right;
+                }
+        /*解决浮动塌陷1-单独设父级标签高度*/
+        /*.cc {*/
+        /*    background-color: pink;*/
+        /*    height: 200px;*/
+        /*}*/
+        /*解决浮动塌陷2-在下面的标签写清除浮动*/
+        .c3{
+            background-color:gold;
+            height:200px;
+            width:200px;
+        /*清除浮动*/
+        /*    clear:both;*/
+        }
+        .clearfix:after{
+            content:"";
+            /*父级标签-设一个空，独占一行*/
+            display:block;
+            clear:both;
+        }
+
+    </style>
+
+</head>
+<body>
+<!--解决浮动塌陷3-标准写法：加一个clearfix类名，清除浮动-->
+<div class="cc clearfix">
+    <div class="c1">我是c1</div>
+    <div class="c2">我是c2</div>
+
+</div>
+<div> </div>
+<div class="c3">我是c3</div>
+
+</body>
+</html>

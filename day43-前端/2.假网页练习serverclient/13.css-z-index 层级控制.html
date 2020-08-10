@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .shadow {
+            position:fixed;
+            top:0px;
+            bottom:0px;
+            left:0px;
+            right:0px;
+            background-color: rgba(0,0,0,0.5);
+            /*通过z-index控制在屏幕显示顺序*/
+            z-index:99;
+        }
+        .mode{
+            position:fixed;
+            height:300px;
+            width:200px;
+            background-color: white;
+            z-index:100;
+            /*设置居中*/
+            top:50%;
+            left:50%;
+            margin-left:-100px;
+            margin-top:-150px;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    我是div1
+</div>
+<div class="mode">
+    我是div3-白框
+</div>
+<div class="shadow">
+    我是div2-阴影
+</div>
+
+
+</body>
+</html>

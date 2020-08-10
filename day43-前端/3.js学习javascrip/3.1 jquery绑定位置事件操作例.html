@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .c1{
+            background-color: red;
+            height:100px;
+            width:100px;
+        }
+        .c2{
+            background-color: green;
+            height:1000px;
+            width:100px;
+        }
+        .c3{
+            background-color: yellow;
+            height:400px;
+            width:100px;
+        }
+          .s1{
+            position:fixed;
+              left:20px;
+              bottom:20px;
+              hight:40px;
+              width:60px;
+              background-color: purple;
+              lin-height:40px;
+              text-align: center;
+        }
+        .s1 a {
+            color:white;
+            font-size:14px;
+            text-decoration: none;
+        }
+        .hide {
+            display:none;
+        }
+         .s2{
+           position:fixed;
+               left:100px;
+                bottom:20px;
+                hight:40px;
+                width:60px;
+                background-color: blue;
+               lin-height:40px;
+               text-align: center;
+         }
+
+    </style>
+</head>
+<body>
+<!--     返回顶站 方法1.用<a name="top">标签设置锚点| 方法2 click事件绑定+鼠标滚动事件)设置值.scrollTop(0)-->
+    <a name="top">这里是顶部</a>
+    <div class="c1" >div class="c1"</div>
+    <div class="c2" >div class="c2"</div>
+    <div class="c3" >div class="c3"</div>
+
+    <button>button</button>
+    <button class="changeposition">button class="changeposition"</button>
+    <script src="jquery.js"></script>
+
+
+    <span class="s1 hide" >
+        <a href="#top">返回顶部</a>
+    </span>
+    <span class="s2">鼠标滚动变0</span>
+
+
+
+    <script>
+        // 1.点击  button class="changeposition" 改变位置
+        $('.changeposition').click(function () {
+            $('.c1').offset({top:200,left:200});
+              })
+
+         // 2.  鼠标滚动事件--例 -> 滚动到特定位置 显示<a href="#top">返回顶部</a>
+            $(window).scroll(function(){
+               // 例：打印显示下滚动事件返回的值   $(window).scrollTop()  //滚轮向下移动的距离 $(window).scrollLeft() //滚轮向左移动的距离
+                a=$(window).scrollTop();
+                console.log(a);
+                if(a>=200){
+                    $('.s1').removeClass('hide');
+                }
+                else{
+                    $('.s1').addClass ('hide');
+                }
+            })
+        // 3.点击事件+ 鼠标滚动事件返回顶站示例 ->例点‘鼠标滚动变0’
+        $('.s2').click(function(){
+               // .scrollTop（）可在括号内设值
+             $(window).scrollTop(0);
+        })
+
+
+    </script>
+
+</body>
+</html>

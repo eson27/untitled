@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--透明度两个rgba()只对背景色不对内容|opacity&#45;&#45;对背景和内容都有效>-->
+    <style>
+        .d1 {
+            height:100px;
+            width:100px;
+            background-color: rgba(255,0,0,0.3);
+        }
+        .d2 {
+            height:100px;
+            width:100px;
+            background-color: rgb(255,0,0);
+            opacity:0.3;
+        }
+
+    </style>
+
+
+</head>
+<body>
+<div class="d1">我是divr-gba（）</div>
+<div class="d2">我是div-opacity</div>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            height:200px;
+            width:200px;
+            border:10px solid red;
+
+        }
+    </style>
+</head>
+<body>
+
+<div>我是div
+    <span>我是span</span>
+
+</div>
+<script src="jquery.js"></script>
+<script>
+// 1.创造标签方法-里面追加
+    a=document.createElement('a');
+    a.href='http://www.baidu.com';
+    a.innerText='baidu';
+  // 1.添加标签写法  $(父).append(a)
+  //   $('div').append(a)
+     // 2.添加标签写法  $(a).appendTo(父)
+    $(a).appendTo('div');
+ // 创造标签方法2-jquery --直接用文本 添加
+    var b= '<a href="http://www.jd.com">jd</a>';
+    // $(b).appendTo('div');
+    $('div').append(b);
+// 2.加到里面前面 .prepend和.prependTo
+// 3.同级前面 $(原有标签）.before（追加标签）| $(追加标签）.insertBefore（原有标签）
+// 4.同级后面 $(原有标签）.after（追加标签）| $(追加标签）.insertAfter（原有标签）
+//     5.移除和清空 .remove()-连本身也同时删除 |.empty() -清空保留自身
+//     6. 替换 $（旧）.replaceWith(新)|$（新）.replaceAll(旧)
+//     7.克隆 .clone()-克隆内容| .clone(true)--连带事件一起克降
+</script>
+
+</body>
+</html>

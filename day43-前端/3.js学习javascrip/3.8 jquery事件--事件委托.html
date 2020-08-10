@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="d1">
+        <button class="c1">button class="c1"</button>
+    </div>
+    <div id="d2">
+        <button class="c2">button class="c2"</button>
+    </div>
+
+<script src="jquery.js"></script>
+    <script>
+// 用事件委托实现克隆效果
+//     1.点击第一个克隆有效
+        $('.c1').on('click',function(){
+            alert('事件委托基于事件冒泡原理|必须用.on绑定|委托给父级标签');
+            var btn=document.createElement('button');
+            $(btn).addClass('c1');
+            $(btn).text('button class="c1"');
+            console.log(btn);
+            $('#d1').append(btn);
+               });
+//     1.事件委托后-点击任一个克隆有效
+        $('#d2').on('click','.c2',function(){
+            alert('事件委托基于事件冒泡原理|必须用.on绑定|委托给父级标签');
+            var btn=document.createElement('button');
+            $(btn).addClass('c2');
+            $(btn).text('button class="c2"');
+            console.log(btn);
+            $('#d2').append(btn);
+
+        });
+
+    </script>
+
+
+</body>
+</html>

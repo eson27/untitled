@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*1.元素选择器--写法：标签名{}|所有相同的标签全部变*/
+        /*div{color:red;}*/
+
+       /* !*2.id选择器-id不能重复-id用数字有问题？*!*/
+       /*  #bbb {*/
+       /*      color:green;*/
+       /*  }*/
+
+       /* !*3.类选择器--所有标签相同类全部变，要选择前面加标签名*!*/
+       /* .c1 {color:green;}*/
+       /* div.c1 {color:yellow;}*/
+       /*  !*4.1 组合选择器--后代选择器*!*/
+       /*!*div a {color:yellow;}*!*/
+       /* !*4.2 组合选择器--儿子选择器，只找第一代*!*/
+       /* !*div>a {color:yellow;}*!*/
+       /* !*4.3 组合选择器--毗邻选择器，相近的下一个*!*/
+       /* div+a {color:yellow;}*/
+       /* !*4.4 组合选择器--弟弟选择器，下面的所有同级标签*!*/
+        div~a {color:yellow;}
+       /* 5 组合选择器--属性选择器，属性字段--一般用在input标签*/
+        input[type=text]{background-color:red;}
+        div[title=xx1]{background-color:red;}
+        /*6. 组合选择器-高级写法-正则表达式 --基本用不到，了解即可*/
+        7.属性选择器
+        [title] {color:red;}
+        div[class] {color:green;}
+        div[id='bbb']{color:blue;}
+
+    </style>
+</head>
+<body>
+    <div title="xx1">csstest0</div>
+    <div id= "1" class="c1">csstest1</div>
+    <div id="bbb" class="c1">csstest2</div>
+    <div id="ccc" class="c1">csstest3</div>
+    <p class="c1">你是p</p>
+
+
+<!--     /*4.1 组合选择器&#45;&#45;后代选择器*/-->
+    <a href="">搜独苗</a>
+    <div>
+        <a href="">百度</a>
+        <p>
+            <a href="">京东</a>
+        </p>
+     </div>
+    <a href="">搜狗</a>
+    <a href="">搜f</a>
+    <input type="text">
+    <input type="password">
+
+
+
+
+
+</body>
+</html>

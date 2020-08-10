@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+</head>
+<body>
+<!--练习1-时间显示器-->
+<input type="text" id="timer">
+<button id="start">开始</button>
+<button id="end">停</button>
+<!--练习2 省市多级选择-->
+<select name="province" id="prov">
+    <option value="0">请选择省</option>
+    
+</select>
+
+<select name="city" id="city">
+    <option class="c1">请选择市</option>
+
+</select>
+
+<script>
+
+ // 练习1-时间显示器
+    // 1.获取当前时间
+    //     var nowTime =new Date().toLocaleTimeString();
+    // 1.1 定义一个全局变量goingTime给开始计时器和停止计时器同时使用
+
+        var goingTime=undefined;
+        // 2.把时间放进去
+            // 2.1绑定点击事件-开始按钮
+         var startBnt= document.getElementById('start');
+            // 2.2绑定input对象
+         var inputText= document.getElementById('timer');
+         // 初始化一下inputText.value
+
+         // if inputText.value='false'
+         function f1(){
+              var nowTime =new Date().toLocaleTimeString();
+             inputText.value=nowTime;}
+        startBnt.onclick =function(){
+             f1();
+             // 解决bug-点多次开始后不能停止,加条件goingTime=undefined判断
+             if (goingTime===undefined){goingTime = setInterval(f1,1000);}
+
+         };
+        // 3.停止计时
+        stopBnt =document.getElementById('end');
+        stopBnt.onclick = function(){
+                            clearInterval(goingTime)
+                            goingTime=undefined
+        }
+
+<!--练习2 省市多级选择-->
+    var data = {'广东':['广州','深圳'],'广西':['南宁','桂林']}
+    // 1.将省份数据放到省下拉框
+    var proSelect = document.getElementById('prov');
+    var citySelect= document.getElementById('city');
+
+    for (var p in data){
+        var addOption= document.createElement('option');
+        addOption.innerText=p;
+        console.log(addOption);
+        proSelect.appendChild(addOption);
+    }
+
+    proSelect.onchange=function (){
+            // #DOM对象下innerText设空值效果和删除标签效果一样,用remove方法要逐个删除
+        citySelect.innerText='';
+
+        for (var c in data[proSelect.value]){
+        var addOption= document.createElement('option');
+         addOption.innerText=data[proSelect.value][c];
+         addOption.className='c1'
+         citySelect.appendChild(addOption);
+    }
+
+    };
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #d1{
+            background-color: red;
+            height:200px;
+            width:200px;
+        }
+        #d2{
+            background-color: yellow;
+            height:200px;
+            width:200px;
+        }
+         .c1{
+            background-color: pink;
+            height:200px;
+            width:200px;
+        }
+          .c3{
+            background-color: purple;
+            height:200px;
+            width:200px;
+        }
+
+        .cc{
+            background-color: purple;
+        }
+        /*5.光标悬浮事件hover方法1*/
+        /*.c1:hover{*/
+           /*background-color: goldenrod;*/
+        /*}*/
+
+    </style>
+</head>
+<body>
+<div id="d1">div id="d1"</div>
+<div id="d2">div id="d2"</div>
+<div class="c1">div class="c1"</div>
+<div class="c3">div class="c3"</div>
+用户名 <input type="text" id="i1">
+城市 <select name="" id="city">
+    <option value="1">广州</option>
+    <option value="1">深圳</option>
+</select>
+
+<script src="jquery.js"></script>
+<script>
+    // 事件操作
+// 1.点击事件
+    // 写法1--$（对象）.click(函数)
+    // $('#d1').click(function(){
+    //     $(this).css({'background-color':'green'})
+    // });
+    // 写法2--$（对象）.on('click',函数)
+    //  $('#d2').on('click',function(){
+    //     $(this).css({'background-color':'blue'})
+    //     }) ;
+ // 2.光标进入事件.focus  -例：点输入框div变色
+ //    $('[type="text"]').focus(function () {
+ //        $('#d1').css({'background-color':'gold'})
+ //    });
+ //  // 3.光标离开事件.blur  -例：点输入框div变色
+ //        $('[type="text"]').blur(function () {
+ //        $('#d1').css({'background-color':'red'})
+ //    });
+ //    // 4.选择事件 change
+ //    $('select').change(function( ){
+ //        $('.c1').toggleClass('cc')
+
+    // });
+    // 5.光标悬浮事件.hover
+    // $('.c1').hover(
+    //     // 第一步进去变色
+    //     function() {
+    //         $(this).css({'background-color': 'blue'});
+    //     },
+    //     // 第二步出去变回原色
+    //     function(){
+    //         $(this).css({'background-color':'yellow'});
+    // })
+    // 6.光标悬浮事件二.mouseenter|.mouseout|mouseover
+    // $('.c3').mouseenter( function() {
+    //         $(this).css({'background-color': 'blue'})});
+    // $('.c3').mouseout (function(){
+    //         $(this).css({'background-color': 'green'})});
+    // 7.键盘事件-keydown 按下|keyup 抬起->绑定window对象
+    //     1.例--响应.keydown-打印
+    //     $(window).keydown(function () {
+    //        console.log('keydown')
+    //     });
+    //         2.例--响应 --返回按键的值--用到事件对象参数-一般写作：event或e
+    //                 注：window对象在激活（点一下当前面面才能有效）
+    //             $(window).keydown(function (e) {
+    //        console.log(e.keyCode);
+    //              // 按键盘左键c1变红，右键变绿
+    //             if (e.keyCode===37){
+    //                 $('.c1').css({'background-color': 'red'})
+    //
+    //             }else if(e.keyCode===39){
+    //                 $('.c1').css({'background-color': 'green'})
+    //
+    //             }
+    //                  } );
+</script>
+
+</body>
+</html>

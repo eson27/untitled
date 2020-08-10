@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #d1{
+            background-color: red;
+            height:200px;
+            width:600px;
+        }
+        #d2{
+            background-color:green;
+            height:100px;
+            width:100px;
+        }
+        #d3{
+            background-color: yellow;
+            height:200px;
+            width:600px;
+        }
+        #d4{
+            background-color:blue;
+            height:100px;
+            width:100px;
+        }
+
+    </style>
+</head>
+<body>
+<div  class="c1" id="d1">
+    <div class="c2" id="d2"></div>
+</div>
+<div  class="c3" id="d3">
+    <div class="c4" id="d4"></div>
+</div>
+
+
+<script src="jquery.js"></script>
+<script>
+ // 1.冒泡事件演示---点d1显示'父级标签'，点d2先显显示'子标签'再'父级标签'--说明响应从里至外顺序执行
+    // $('#d1').click(function (){
+    //     alert('父级标签')
+    // });
+    // $('#d2').click(function (){
+    //     alert('子标签')
+    // });
+// 2.阻止冒泡-- 两种方法-使用事件对象.stopPropagation()方法- 英文字面意思停止传递| return false
+    $('#d3').click(function (){
+        alert('父级标签')
+    });
+    $('#d4').click(function (e){
+        alert('子标签');
+        // 阻止后续事件发生-方法1
+        // e.stopPropagation();
+        // 阻止后续事件发生-方法2
+        return false;
+    });
+
+
+</script>
+</body>
+</html>

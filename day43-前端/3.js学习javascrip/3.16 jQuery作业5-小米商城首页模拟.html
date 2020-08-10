@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin:0px;
+            padding:0px;
+            /*控制页面溢出效果页--同时设-->最小宽度 min-width: 1226px;和-overflow：auto-溢出裁掉，页面出现下边和右加滚动条*/
+            /*注:行内块级标签要使用float浮起来才行，用position方法缩小窗口会出现标签堆叠*/
+            min-width: 1226px;
+             oveflow:auto;
+        }
+        /*1.上面部分*/
+        #topBar{
+            background-color: #333;
+            height:40px;
+            width:100%;
+            font-size:12px;
+            margin:0px;
+            border:0px;
+            padding:0px;
+            color:#b0b0b0;
+
+            /*z-index:30;*/
+        }
+
+        .dtl{
+            float:left;
+            margin-left:5%;
+            left:20px;
+            line-height: 40px;
+       }
+        .dtm{
+            float:left;
+            margin-left:100px;
+            line-height: 40px;
+        }
+        .dtr{
+            float:right;
+            margin-right:5%;
+            line-height: 40px;
+        }
+        #topBar a:hover{color:#fff}
+
+        /*2.中间部分*/
+        #midBar{
+            height:100px;
+            margin-left: 5%;
+            margin-right:5%;
+        }
+        #mbl {
+
+            float:left;
+
+        }
+        #mbl a img{
+            background-color: orange;
+            height:55px;
+            width:55px;
+        }
+        #mbl a {
+            background-color: #f54545;
+            height:55px;
+            width:55px;
+            /*#块级标签浮起来后不能设高宽，要设display:inline-block*/
+            display:inline-block;
+            margin-top: 22px;
+        }
+        #mbm{
+            float:left;
+            line-height:100px;
+            font-size:16px;
+            margin-left:150px;
+        }
+        #mbm a{
+            padding:26px 10px 38px;
+            text-decoration: none;
+            color:#333;
+        }
+        #mbm a:hover{
+            color:#ff6700;
+        }
+        #mbr {float:right;
+            margin-top: 20px;
+        }
+        #mbr [type='text']{
+            height:48px;
+            width:150px;
+            font-size:14px;
+            display:inline-block;
+
+        }
+        #mbr [type='submit']{
+            height:54px;
+            width:54px;
+            font-size:14px;
+        }
+        #mbr [type='submit']:hover{
+            background-color: orange;
+
+        }
+        /*3.下面部分*/
+        #downBar{
+            margin-left: 5%;
+            margin-right:5%;
+            padding: 0px;
+
+
+             color: #fff;
+        }
+        #ddl{
+            float:left;
+            height:460px;
+            width:20%;
+            padding: 0px;
+            margin: 0px;
+            background-color:rgba(105,101,101,0.6);
+        }
+        #plist{
+
+            height:420px;
+            /*width:100%;*/
+            padding-top:20px;
+            padding-bottom: 20px;
+            padding-left: 0px;
+
+            /*padding-inline:40px;*/
+        }
+        #plist li{
+            height:42px;
+            width:100%;
+            margin-left: 0px;
+            /*li标签去前面圆点*/
+            list-style: none;
+        }
+        #plist li a {
+            float:left;
+            color: #fff;
+            font-size: 14px;
+            margin-left: 40px;
+            /*a标签云下划线*/
+            text-decoration: none;
+        }
+        #plist li span {
+            float:right;
+            margin-right:30px;
+
+        }
+    #plist li:hover{
+        background-color: #ff6700;
+    }
+     #ddr{
+         float:right;
+         height:460px;
+         width:80%;
+     }
+    #ddr img{
+        height:460px;
+        width:100%;
+    }
+    </style>
+</head>
+<body>
+<!--1.菜单栏-->
+<div id="topBar">
+        <div class="dtl">
+            <a class="topLeft">小米商城</a> <span class="sep">|</span>
+            <a class="topLeft">MIUI</a> <span class="sep">|</span>
+            <a class="topLeft">IoT</a> <span class="sep">|</span>
+            <a class="topLeft">云服务</a> <span class="sep">|</span>
+            <a class="topLeft">金融</a> <span class="sep">|</span>
+            <a class="topLeft">有品</a> <span class="sep">|</span>
+            <a  class="topLeft">小爱开放平台</a> <span class="sep">|</span>
+            <a class="topLeft">企业团购</a> <span class="sep">|</span>
+            <a class="topLeft">资质证照</a> <span class="sep">|</span>
+            <a class="topLeft">协议规则</a> <span class="sep">|</span>
+            <a class="topLeft">下载app<span>小米商城APP</span></a> <span class="sep">|</span>
+            <a class="topLeft">Select Location</a>
+        </div>
+
+        <div id="miniCar" class="dtm">
+            <a class="car"> 购物车
+               <span class="cart-mini-num J_cartNum">（0）</span>
+            </a>
+        </div>
+
+        <div id="J_siteUserInfo" class="dtr">
+            <a>登录</a>
+            <span class="sep">|</span>
+            <a>注册</a>
+            <span class="sep">|</span>
+            <span class="message">
+                <a >消息通知
+                    <i class="J_miMessageTotal"></i>
+                </a>
+            </span>
+        </div>
+</div>
+
+<!--2.中间搜索栏-->
+<div id="midBar">
+    <div id="mbl">
+        <a href="http://www.xiaohuar.com">
+            <img src="mi-logo.png" alt="">
+        </a>
+
+    </div>
+    <div id="mbm">
+        <a href="">小米手机</a>
+        <a href="">redmi红米</a>
+        <a href="">电视</a>
+        <a href="">笔记本</a>
+        <a href="">家电</a>
+        <a href="">路由器</a>
+        <a href="">智能硬件</a>
+        <a href="">服务</a>
+        <a href="">社区</a>
+    </div>
+
+    <div id="mbr">
+        <input type="text" id="input1"><input type="submit">
+ </div>
+
+</div>
+
+<!--3.下面商品栏-->
+<div id="downBar">
+    <div id="ddl">
+        <ul id="plist">
+            <li>
+                <a href="">手机 电话卡</a>
+                <span>&gt</span>
+            </li>
+
+            <li>
+                <a href="">电视 盒子</a>
+                <span>&gt</span>
+            </li>
+
+            <li>
+                <a href="">笔记本 显示器 平板</a>
+                <span>&gt</span>
+            </li>
+
+            <li>
+                <a href="">家电 插线板</a>
+                <span>&gt</span>
+            </li>
+
+            <li>
+                <a href="">出行 穿戴</a>
+                <span>&gt</span>
+            </li>
+
+            <li>
+                <a href="">智能 路由器</a>
+                <span>&gt</span>
+            </li>
+
+            <li>
+                <a href="">电源 配件</a>
+                <span>&gt</span>
+            </li>
+
+            <li>
+                <a href="">健康 儿童</a>
+                <span>&gt</span>
+            </li>
+
+             <li>
+                <a href="">耳机 音箱</a>
+                 <span>&gt</span>
+            </li>
+
+            <li>
+                <a href="">生活 箱包</a>
+                <span>&gt</span>
+            </li>
+
+        </ul>
+    </div>
+
+    <div id="ddr">
+        <img src="mi-ddr.png" alt="">
+
+    </div>
+
+</div>
+
+</body>
+</html>

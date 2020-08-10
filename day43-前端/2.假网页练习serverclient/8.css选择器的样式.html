@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+ /*<!--    1.高度|宽度;对块级标签有效，内联无效-->*/
+    div {
+        background-color:green;
+        height:200px;
+        width:200px;
+            }
+    span {
+        background-color:red;
+        height:200px;
+        width:200px;
+
+            }
+ /*!*2.字体属性-大小|格式 |颜色      *!*/
+ /*    div {*/
+ /*        !*字体-有些浏览器不支持一些字体，按顺序选择字体*!*/
+ /*        font-family:'宋体','微软雅黑';*/
+ /*        !*字体大小-默认16px*!*/
+ /*        font-size:40px;*/
+ /*        !*字粗细--数值100-900|加粗-bool*!*/
+ /*        !*font-weight:bold;*!*/
+ /*        font-weight:100;*/
+ /*        !*字体颜色-文字描述|RGB（r,g,b）|rgba（r,g,b,透明度）|色号#34244-网上查色号表 *!*/
+ /*        color:rgba(132,211,122,0.3);*/
+
+ /*    }*/
+/*文字属性--左对齐|右对齐..|        */
+    div{
+        /*对齐 right|left|center*/
+        text-align:right;
+        /*文字装饰-加线 */
+        text-decoration:underline;
+            }
+    p{
+         /*首行缩进-16px/字符-下例缩进2个字符-对内联标签无效*/
+        text-indent:32px;
+    }
+/*背景属性-颜色 | 图片-。。*/
+     p{
+
+         /*background-color:green;*/
+         height:400px;
+         width:400px;
+         /*背景图片url(链接)-不能控制图片大小，图片大小要与size一致*/
+         /*background-image不加控制-默认铺满*/
+         /*background-image:url('200X200.jpg');*/
+         /*!*background-repeat-no-repeat不重复|repeat铺满|repeatx横铺|...*!*/
+         /*background-repeat:no-repeat;*/
+         /*!*position-控制位置-九宫格位置-lefttop|centercenter|...也可以输数值*!*/
+         /*background-position:center center;*/
+         /*简写方式--颜色- 图片链接 - 是否平铺 -位置*/
+         background: #f54545 url('200X200.jpg') no-repeat center center ;
+         /*attachment:fixed固定不动*/
+         /*background-attachment:fixed;*/
+
+     }
+/*圆形头像示例--子标签高宽受父标签约束*/
+/*        先将图片在子标签100%显示，再用父标签定义最终显示大小*/
+        .p1>img{
+            width:100%;
+        }
+        .p1{
+            height:100px;
+            width:100px;
+            border:solid;
+            border-radius:50%;
+            overflow:hidden;
+
+
+        }
+
+    </style>
+
+
+
+
+</head>
+<body>
+<div>我是div块级标签</div>
+<span>我是span内联标签</span>
+<p>我是p块级标签</p>
+<div class="p1">
+    <img src="200X200.jpg" alt="">
+</div>
+
+</body>
+</html>

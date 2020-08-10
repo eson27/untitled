@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*a标签自带效果未访问过蓝色访问过紫色*/
+        /*未访问过的标签设为红色*/
+        a:link {color:red;}
+         /*访问过的标签为黄色*/
+        a:visited{color:yellow;}
+        /*hover-鼠标点中变绿,注这个不是a标签专用,其它标签可用，语法是直接写在标签后，看下div例*/
+        a.active{color:red;}
+        a:hover{color:green;}
+        div {background-color:yellow;
+            height:100px;
+            width:100px;
+        }
+        div:hover{background-color:green;}
+        /*focus属性,光标位置效果*/
+        input:focus{background-color:red;}
+
+        /*伪元素选择器--在标签内的内容加效果*/
+        div:first-letter{color:red;
+                        font-size:40px;
+         }
+        p:before{
+            color:blue;
+            content:'前前';
+            font-size:40px;
+        }
+        p:after{
+            color:green;
+            content:'后后';
+            font-size:60px;
+        }
+
+
+    </style>
+
+</head>
+<body>
+<a href="http://www.jd.com">京东</a>
+<div>
+我是div
+</div>
+<input type="text">
+<p>我是p</p>
+
+</body>
+</html>

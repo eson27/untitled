@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*div {*/
+        /*    width:200px;*/
+        /*    height:200px;*/
+
+ /*    !*1.style-设线形|color- 颜色| width-线宽|..还可以单独设左、右、上、下*!*/
+        /*    !*border-style:solid;*!*/
+        /*    !*border-color:red;*!*/
+        /*    !*border-width:10px;*!*/
+        /*    !*简写 -width-style-color*!*/
+        /*    border:10px solid red;*/
+        /*    !*边框-控制圆角 50%以上是纯圆形*!*/
+        /*    border-radius:9%;*/
+
+/*2. display属性-可将块级标签变成内联标签- inline-只有内联属性-高宽无效|*/
+        div{
+            width:200px;
+            height:200px;
+            /*简写 -width-style-color*/
+            border:10px solid red;
+            /*边框-控制圆角 50%以上是纯圆形*/
+            border-radius:9%;
+
+            /*display-inline变内联-不独占一行|高宽无效*/
+            /*display:inline;*/
+            /*display-inline-block变内联-不独占一行|高宽有效*/
+            display:inline-block;
+            /*display-none变内联-bqad*/
+            display:none;
+         }
+        /*display-block 内联变块级-独占一行|高宽有效*/
+        span{
+            color:red;
+            border:10px solid blue;
+            /*width:200px;*/
+            /*height:200px;*/
+
+            display:block
+        }
+        /*display-block 内联变块级-独占一行|高宽有效*/
+        p{
+            /*display:none;隐藏不占位置，visibility:hidden;隐藏占位置*/
+/*3.盒子模型->一个标签占的位置是根据盒子模型确定，内容占位+padding内边距 + border边框|还有margin外边距但不算自占空间*/
+
+
+            width:200px;
+            height:200px;
+            padding-top:20px;
+            margin-left:100px;
+
+            /*visibility:hidden;*/
+
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+<div>我是一个div</div>
+<p>我是一个p</p>
+<span>我是一个span</span>
+<span>我是一个span</span>
+
+</body>
+</html>

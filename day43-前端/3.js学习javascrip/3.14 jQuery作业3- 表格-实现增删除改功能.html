@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*c1&c2定义弹出对话框，c1为全屏的透明背景，c2为输入框*/
+        .c1{
+            position: fixed;
+            top:0;
+            left:0;
+            bottom:0;
+            right:0;
+            background-color: rgba(0,0,0,0.3);
+            z-index:50;
+        }
+        .c2{
+            height:200px;
+            width:300px;
+            background-color:white;
+            position: absolute;
+            left:50%;
+            top:50%;
+            margin-top: -100px;
+            margin-left:-150px;
+            z-index:100;
+        }
+        .hide{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+<div><button id="add">新增</button></div>
+<table border="solid">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>姓名</th>
+            <th>爱好</th>
+            <th>操作</th>
+        </tr>
+
+    </thead>
+    <tbody id="tb">
+        <tr>
+            <td><input type="checkbox"></td>
+            <td class="username">a</td>
+            <td class="hobby">游泳</td>
+            <td>
+                <button class="rv">开除</button>
+                <button class="md">修改</button>
+            </td>
+        </tr>
+       <tr>
+            <td><input type="checkbox"></td>
+            <td class="username">b</td>
+            <td class="hobby">画画</td>
+            <td>
+                <button class="rv">开除</button>
+                <button class="md">修改</button>
+            </td>
+        </tr>
+       <tr>
+            <td><input type="checkbox"></td>
+            <td class="username">c</td>
+            <td class="hobby">看书</td>
+            <td>
+                <button class="rv">开除</button>
+                <button class="md">修改</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="cc hide">
+    <div class="c1 " ></div>
+    <div class="c2 ">
+        <div>
+        姓名：<input type="text" id="usr">
+        </div>
+        <div>
+        爱好：<input type="text" id="hob">
+            </div>
+        <button id="sb">提交</button>
+        <button id="cl">取消</button>
+    </div>
+
+</div>
+
+<script src="jquery.js"></script>
+<script>
+// 实现表增删改效果
+//     1.新增弹出模态对话框
+    $('#add').on('click',function () {
+        $('.cc').removeClass('hide');
+        $('#usr').val('');
+        $('#hob').val('');
+        // flag=1
+
+// 2.用户输入内容点确定新增
+    $('#sb').on('click',function () {
+        // 2.1 获取输入值
+        var usr=$('#usr').val();
+        var hob=$('#hob').val();
+        // 2.2 创建标签---用字符串拼接方式较简便
+        var newLable='<tr> <td><input type="checkbox"></td> <td class="username">'+usr+'</td> <td class="hobby">'+hob+'</td><td> <button class="rv">开除</button> <button class="md">修改</button></td></tr>';
+        // 2.3 将新标签添加到tbody标签最后
+        $('#tb').append(newLable);
+            });
+     });
+// 3.用户点击取消-对话框隐藏
+        $('#cl').on('click',function () {
+            $('.cc').addClass('hide')
+        });
+// 4.删除 --注意有坑-新增的不能删除因为新增发生在绑定之后-解决要做事件委托
+//     4.1-错误示例，没有事件委托情况-新增不能删除
+//         $('.rv').on('click',function () {
+//             $(this).parent().parent().remove()
+//         });
+      // 4.2-有事件委托情况-新增能删除
+        $('tbody').on('click','.rv',function () {
+            $(this).parent().parent().remove()
+        });
+// 5. 修改
+        $('tbody').on('click','.md',function () {
+            // 前面输入框提交按钮先绑定了新增，先解绑不然执行新增+修改
+            $('#sb').off('click');
+            var oldusr=$(this).parent().siblings('.username');
+            var oldhob=$(this).parent().siblings('.hobby');
+            console.log(hob);
+            $('.cc').removeClass('hide');
+            $('#usr').val(oldusr.text());
+            $('#hob').val(oldhob.text());
+
+            $('#sb').on('click',function () {
+                oldusr.text($('#usr').val());
+                oldhob.text($('#hob').val());
+                });
+
+        });
+
+
+</script>
+</body>
+</html>

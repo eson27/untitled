@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+    <!-DOCTYPE html声明为HTML5文档>
+<html lang="en">
+<head>
+    <!   meta里写配置信息--
+        >
+    <meta charset="UTF-8">
+    <!-meta http-equiv="refresh" content="2;URL=https://www.jd.com">
+    <title>Title</title>
+</head>
+<body>
+<!--    img 图片标twgisrc-路径 alt 加载时的提示 width 数值单位=像素-->
+    <img src="1.jpg" alt="西部girl" title="美女" width="200">
+
+<!--    a 标签 超链接标签|内敛标签 属性 href =链接 |target="_blank" 以新页面打开 -->
+<!--    <a href="https://www.cnblogs.com/clschao/articles/10077261.html">博客园</a>-->
+    <a href="https://www.cnblogs.com/clschao/articles/10077261.html" target="_blank"> 博客园 </a>
+
+<!--    <ul><li></li></ul>固定搭配;无序列表标签 属性 type='dist'|circle|square|none-->
+    <ul type="circle">
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+        <li>d</li>
+   </ul>
+<!--    <ol><li></li></ol>固定搭配;有序列表标签 属性 type='a'|b|1|..| start=开始数字-->
+    <ol type="1" start=2>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+        <li>d</li>
+   </ol>
+<!--<d1><dt><dd></dd></dt></d1> 标题列表标签 -->
+    <d1>
+        <dt>菜单1</dt>
+        <dd>1</dd>
+        <dd>2</dd>
+        <dt>菜单2</dt>
+        <dd>a</dd>
+        <dd>b</dd>
+    </d1>
+<!--<table><thead><tr><th></th></tr></thead><tbody><tr><td></td></tr></tbody></table> 固定搭配-表格标签-表关th加粗效果|td正常 属性 borer边框单位ps|cellpadding 文字与边框距离|cellspacing内外边框距离-->
+   <table borer="1" cellpadding="1" cellspacing="1">
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>姓名</th>
+                <th>年龄</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>a</td>
+                <td>11</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>b</td>
+                <td>22</td>
+            </tr>
+            </tbody>
+    </table>
+
+<!--&lt;!&ndash;input 输入标签 用户输入 属性 type= "text"明文|"password"加密|"radio" name="**" 单选|date|file|checked默认选中|...&ndash;&gt;-->
+<!--    <input type="text">-->
+<!--    <input type="password">-->
+<!--    <input type="radio" name="sex">男-->
+<!--    <input type="radio" name="sex">女-->
+<!--form -input 表单标签 用来用户输入数据提交 属性 action=路径 |数据提交必须有name -分组|value-数据，input type=submit|button标签均可后后台socket服务端接收 提交的是括号内容sex:1-->
+<form action="127.0.0.1:9000">
+    for=id 注 id不能重复，重复会有红色波浪线提示
+    <label for="username">用户名</label>
+    <input id="username" type="text" name="用户名">
+    <input type="password" name="密码">
+    <input type="radio" name="sex" value="1">男
+    <input type="radio" name="sex" value="2" checked="checked">女
+    <input type="date" name="日期">
+    <input type="file" name="选择文件">
+    <input type="submit">
+    <input type="checkbox">
+    <input type="hidden">
+<!--   form- select-option 下拉式选择标签 属性 name | multiple多选（要按ctr单选） option value|selected默认选中-->
+    <select name="城市" multiple>
+        <option value="1">广州</option>
+        <option value="2" selected="selected">深圳</option>
+        <option value="3">东莞</option>
+    </select>
+<!--    label 标签说明 -没有做label的标签会标黄色但不会报错-for=指向标签的id 浏览器点用户名指向标签位置-->
+<!--    textarea 多行文本标签 属性 cols行数|rows列 |name-指交需要的key-->
+    <textarea name="多行文本输入" id="" cols="30" rows="10">
+
+
+
+    </textarea>
+  
+</form>
+
+
+
+    <p>p段落标签,上下有行距</p>
+    <div>div 块级标签|行外标签|独占一行|没有其它效果,用得最多</div>
+    <button>button</button>
+    <b>b&nbsp&nbsp&nbsp&nbspb</b>
+    <br>
+    <i>i</i>
+    <hr>
+    <u>u</u>
+    <s>s</s>
+    <span>“span 内敛标签|行内标签|没有其它效果|最常用”</span>
+
+    <h1> h1效果 </h1>
+    <h2> h2效果 </h2>
+    <h3> h3效果 </h3>
+
+
+</body>
+
+</html>

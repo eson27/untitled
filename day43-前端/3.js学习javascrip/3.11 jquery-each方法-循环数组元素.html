@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ur>
+    <li>11</li>
+    <li>22</li>
+    <li>33</li>
+    <li>44</li>
+</ur>
+
+<script src="jquery.js"></script>
+<script>
+    // 1.直接for循环数组，出来包含一些元素外的数据项
+    for (var i in $('li')){ console.log($('li').eq(i).text())};
+    // 2.jquery方法.each 在函数内设两个参数k-索引 v-标签，可取出标签元素
+    $('li').each(function(k,v){console.log(k,v)});
+    // 3.参数v是一个dom对象，可使用dom方法
+   $('li').each(function(k,v){console.log(k,v.innerText)});
+   // 4.调用$.each()方法循环一般数组
+    $.each(a,function(k,v){ console.log(k,v)});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .xx {
+            background-color: yellow;
+            height:100px;
+            width:100px
+        }
+        .xx2{
+           background-color: red;
+            height:200px;
+            width:200px
+        }
+    </style>
+
+
+
+</head>
+<body>
+<div class="cc" id="dd">
+    <div class="c1" id="d1">我是c1-d1</div>
+    <div class="c2" id="d2">我是c2-d2</div>
+    <div class="c1" id="d4">我是c1-d4</div>
+
+    <!--    按钮点击执行函数-->
+    <button class="c3" id="d3" onclick="f1(this);">点击变字 </button>
+    <input class='ci' id='inp' type="text">
+</div>
+<div class="xx" id="cl">类操作</div>
+<div class="xx2" id="onc" onclick="f1()">我是点击事件1</div>
+<div class="xx2" id="onc2">我是点击事件2</div>
+<select id="sel1">
+    <option value="1">option value="1"</option>
+    <option value="2">option value="2"</option>
+    <option value="3">option value="3"</option>
+</select>
+
+</body>
+<script>
+    // var btn = document.getElementsByClassName('c3');
+    // console.log(btn);
+    // // function f1(){
+    // //     var a=document.getElementById('d2');
+    // //     a.innerText+='点击变';
+    // //        }
+    // //     getElementsByClassName多个同类返回一个数组
+    //     function f1(){
+    //     var a= document.getElementsByClassName('c1');
+    //     a[0].innerText+='点击变';
+    //     a[1].innerText='点击变.。';
+    //        }
+    // // 儿子标签示操作例
+    // var b=document.getElementsByClassName('cc');
+    // console.log(b[0].children);
+    // // 创建节点
+    // var dd=document.getElementById('dd');
+    // a=document.createElement('a');
+    // a.innerText='我是a-创建节点';
+    // // // 插入到后面
+    // // dd.appendChild(a);
+    // // 插入到某个前面
+    // dd.insertBefore(a,d2);
+    // dd.replaceChild(a,d2);
+    // // 设置和查看属性
+    // a.setAttribute('href','http://www.baidu.com')
+    // a.getAttribute('href')
+    // // 操作值
+    // var inp=document.getElementById('inp');
+    // // 获取值
+    // inp_v=inp.value
+    // // 设置值
+    // inp.value='helloworld'
+    // // 类操作
+    // var cl=document.getElementById('cl');
+    //     // 类查看---在控制台输入
+    // cl.classList;
+    //     // 类添加---在控制台输入
+    // cl.classList.add('xx2');
+    //  // 类有就删除|无就添加---在控制台输入
+    // cl.classList.toggle('xx2');
+    // 事件-1.点击事件
+    // //      写法一 在标签写onclick='f1()'再在script写函数
+    // function f1(){
+    //     var onc = document.getElementById('onc');
+    //     onc.style.backgroundColor='yellow';
+    // }
+    // 写法二 直接在script写函数
+
+        // onc2.onclick = function (){
+        //   var onc2 = document.getElementById('onc2');
+        //      onc2.style.backgroundColor='yellow';
+        // }
+    // 事件-2.onchange 内容发生变化事件 input事件使用onchange光标离开或回车触发事件
+       sel1.onchange= function (){
+          var sel1 = document.getElementById('sel1');
+             sel1.style.backgroundColor='yellow';
+             console.log(this.options[this.selectedIndex].innerText);
+        }
+
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="all">全选</button>
+<button id="rv">反选</button>
+<button id="cl">取消</button>
+
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>姓名</th>
+            <th>爱好</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>a</td>
+            <td>游泳</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>b</td>
+            <td>划水</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>c</td>
+            <td>看书</td>
+        </tr>
+    </tbody>
+</table>
+<script src="jquery.js"></script>
+<script>
+    $('#all').on('click',function () {
+        $(':checkbox').prop('checked',true)
+    });
+    $('#cl').on('click',function () {
+        $(':checkbox').prop('checked',false)
+    });
+    $('#rv').on('click',function () {
+        // jQuery的each方法返回v是dom对象,用原生js方法
+        // 查看每个checkbox的index和checked值--演示each()方法的遍历效果 ，K --index ，v-DOM对象，也可以纯逻辑var list=[1,2,3] --> $.each('list',function(k,v){..逻辑..}
+        // $(':checkbox').each(function(k,v){console.log(k,v.checked)});
+        // 取当前checked值的非,因为值是布尔值可用运算符取反
+        $(':checkbox').each(function(k,v){console.log(k,v.checked=!v.checked)});
+    });
+
+</script>
+</body>
+</html>

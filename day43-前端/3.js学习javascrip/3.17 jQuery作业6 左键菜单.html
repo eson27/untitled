@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .hide{
+            display:none
+        }
+
+
+    </style>
+
+</head>
+<body>
+<ul class="outside">
+    <li>菜单1
+        <ul class="inside hide">
+            <li>清菜</li>
+            <li>萝卜</li>
+        </ul>
+    </li>
+     <li>菜单2
+        <ul class="inside hide">
+            <li>清菜</li>
+            <li>萝卜</li>
+        </ul>
+    </li>
+    <li>菜单3
+        <ul class="inside hide">
+            <li>清菜</li>
+            <li>萝卜</li>
+        </ul>
+    </li>
+</ul>
+<script src="jquery.js"></script>
+<script>
+        $('.outside li').on('click',function () {
+            $(this).children('ul').toggleClass('hide');
+            $(this).siblings().children('ul').addClass('hide')
+        });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+输入内容：<input type="text" id="search">
+
+
+<script src="jquery.js"></script>
+<script>
+// 1.例-模拟百度搜索框->输入内容后--下面出现联想选择框
+    // sep1.每输入一个字就立即响应
+  $('#search').on('input',function () {
+      console.log($(this).val())
+
+  });
+  // sep2.数据库操作返回到隐藏的标签，解除隐藏---数据库mogodb后面学习这里先不写这步
+
+</script>
+
+
+</body>
+</html>

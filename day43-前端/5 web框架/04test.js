@@ -1,0 +1,1 @@
+alert('web项目包括-服务器| 返回数据-->打开服务器-客户端请求--服务端返回数据 \r\n html 内的二次请求的响应 如 ：a标签 href |img标签 url |form 标签 action')

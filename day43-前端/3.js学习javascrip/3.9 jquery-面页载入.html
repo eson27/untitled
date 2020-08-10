@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--    // 2.也可用原生的windowonload把script方法放在前面但声明最后加载，但有覆盖现象-->
+    <script src="jquery.js"></script>
+<!--&lt;!&ndash;&lt;!&ndash;    // 2.1原生写法-声明最后加载 &#45;&#45;会有覆盖现象，后面会覆盖前面的window.onload&ndash;&gt;&ndash;&gt;-->
+<!--    <script>-->
+<!--        // 原生写法-声明最后加载 &#45;&#45;会有覆盖现象，后面会覆盖前面的window.onload-->
+<!--         window.onload=function () {-->
+<!--             $('.c1').on('click',function () {-->
+<!--                $(this).css({'background-color':'blue'})-->
+<!--             })-->
+<!--         };-->
+
+<!--    </script>-->
+<!--    -->
+<!--    2.2 jquery 写法有两种-->
+    <script>
+        $(function () {
+           $('.c1').on('click',function () {
+                $(this).css({'background-color':'blue'})
+             })
+
+        });
+        
+        
+    </script>
+
+
+
+    <style>
+        .c1{
+            background-color: red;
+            height:100px;
+            width:100px;
+        }
+    </style>
+</head>
+<body>
+<div class="c1">div class="c1"</div>
+
+<!-- // 1.页面加载从上至下，一般统一将script写最后-->
+<!--<script src="jquery.js"></script>-->
+<!--<script>-->
+
+<!--    $('.c1').on('click',function () {-->
+<!--        $(this).css({'background-color':'blue'})-->
+<!--        -->
+<!--    })-->
+<!--    -->
+<!--</script>-->
+
+</body>
+</html>

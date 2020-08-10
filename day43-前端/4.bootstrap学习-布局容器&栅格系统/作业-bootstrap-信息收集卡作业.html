@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="bootstrap-3.3.7\dist\css\bootstrap.min.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+<!--class="container" 使用容器产生两边留白效果-->
+<div class="container">
+<!--    1.在https://v3.bootcss.com/components/#page-header中找到页头复制过来修过字-->
+    <div class="page-header">
+        <h1>信息收集卡 <small>共三步</small></h1>
+    </div>
+<!--2. 组件&#45;&#45;进度条-->
+    <div class="progress">
+      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+        60%
+      </div>
+    </div>
+<!--3.组件、面板-->
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">基本信息 <span class="glyphicon glyphicon-pushpin pull-right"></span></h3>
+      </div>
+
+      <div class="panel-body">
+<!--          栅格系统12格取4再往右移一列列放表单-->
+          <div class="row">
+            <div class="col-md-4 col-md-offset-1">
+    <!--            全局css样式-表单-水平表单-->
+                <form class="form-horizontal">
+                      <div class="form-group">
+                        <label for="inputName" class="col-sm-2 control-label">用户</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="inputName" placeholder="username">
+                        </div>
+                      </div>
+
+                    <div class="form-group">
+                        <label for="inputTel" class="col-sm-2 control-label">电话</label>
+                        <div class="col-sm-10">
+                          <input type="tel" class="form-control" id="inputTel" placeholder="telephone">
+                        </div>
+                      </div>
+
+                       <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">邮箱</label>
+                        <div class="col-sm-10">
+                          <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
+                        <div class="col-sm-10">
+                          <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                        </div>
+                      </div>
+
+                    <div class="form-group">
+                        <label for="inputHeadpic" class="col-sm-2 control-label">头像</label>
+                        <div class="col-sm-10">
+                          <input type="file"  id="inputHeadpic" placeholder="Email">
+                            <p class="help-block">help text here.只支持JPG格式</p>
+                        </div>
+                      </div>
+
+                    <div class="form-group">
+                        <label for="inputHeadpic" class="col-sm-2 control-label">属性</label>
+                        <div class="col-sm-10">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                    属性1-男
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                    属性2-女
+                                </label>
+                            </div>
+                            <div class="radio disabled">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" >
+                                    属性3-男女
+                                </label>
+                            </div>
+
+                        </div>
+                      </div>
+                </form>
+             </div>
+
+
+
+      </div>
+    </div>
+
+
+
+    </div>
+<!--    按钮放在右下角-->
+    <button type="button" class="btn btn-success pull-right">下一步</button>
+
+</div>
+
+
+<script src="jquery.js"></script>
+<script src="bootstrap-3.3.7\dist\js\bootstrap.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+</head>
+<table border="2px solid ">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>姓名</th>
+        <th>操作</th>
+    </tr>
+
+    </thead>
+    <tbody>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>a</td>
+        <td><select  class="s1">
+            <option value="1">上线</option>
+            <option value="2">开除</option>
+        </select></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>b</td>
+        <td><select  class="s1">
+            <option value="1">上线</option>
+            <option value="2">开除</option>
+        </select></td>
+    </tr>
+        <tr>
+        <td><input type="checkbox"></td>
+        <td>c</td>
+        <td><select  class="s1">
+            <option value="1">上线</option>
+            <option value="2">开除</option>
+        </select></td>
+    </tr>
+    </tbody>
+
+</table>
+
+<script src="jquery.js"></script>
+<script>
+ // 实现按下shit键，选中的行批量修改
+ //    1.获取keydow事件中shit的值-->16
+    var flag;
+    $(window).keydown(function (e) {
+        // console.log(e.keyCode);
+        shitDown=e.keyCode;
+        if (shitDown===16){flag='1'}
+         });
+    $(window).keyup(function (e) {
+        shitUp=e.keyCode;
+        if (shitUp===16){flag='2'}
+         });
+    $('select').change(function () {
+            var sts=$(this).parent().siblings().find('[type="checkbox"]').prop('checked');
+            // console.log(sts);
+            if(sts===true && flag==='1') {
+                // 选中的操作值
+                var selectVal = $(this).val();
+                $(':checked').parent().siblings().find('select').val(selectVal);
+            }
+            })
+
+
+
+
+
+
+
+
+</script>
+
+
+<body>
+
+</body>
+</html>
