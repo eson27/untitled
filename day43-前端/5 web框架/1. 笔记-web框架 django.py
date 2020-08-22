@@ -1293,7 +1293,7 @@ sep2 引用forms模块 ，用forms操作写类：增加字段属性-写标签 �
 #         # widget= forms.widgets.TextInput(attrs={'class':'form-control'})
 #     )
        .....
-          class Meta:  #2. ModelForm 固定定法，表单类中需要加model=UserInfo 指向那个models类，及类中的那些字段。注：Form与ModelForm区别：Form保存数据时用 models.Book.object.create()方法， ModelForme 用save(）方法，但要加Meta类。注 Meta类可以批量设置标签可看博客 class Meta下常用参数：model|fields|exclude|labels|help_texts|widgets|error_messages
+          class Meta:  #2. ModelForm 固定写法，表单类中需要加model=UserInfo 指向那个models类，及类中的那些字段。注：Form与ModelForm区别：Form保存数据时用 models.Book.object.create()方法， ModelForme 用save(）方法，但要加Meta类。注 Meta类可以批量设置标签可看博客 class Meta下常用参数：model|fields|exclude|labels|help_texts|widgets|error_messages
         model = models.Book
         fields = ('__all__') # 引用数据库Book表的所有字段
         exclude = None   # 剔除数据库Book表的所有字段
@@ -1331,19 +1331,21 @@ sep4 写html模板 # 两者相同
 坑1 编辑书籍需要显示原有数据：forms.Form 不能用 object(instance= XX)，form.ModelForm可以用，
 
 '''
-#十三  csrf 介绍 1.csrf安全机制补充|2.浏览器同源安全机制|跨站请求|跨源--简单请求、复杂请求
 
+#十三  csrf 介绍 1.csrf安全机制补充|2.浏览器同源安全机制|跨站请求|跨源--简单请求、复杂请求
 '''
 1.csrf安全机制补充 -- html body中的crsf--csrfmiddlewaretoken--在ajax中data{}写入|  html headers中的cookies中的crsf--csrf-token-在ajax的headersv{}写入   
 https://www.cnblogs.com/clschao/articles/10468335.html#part_3
 
 2.浏览器同源安全机制|跨站请求|跨源--简单请求、复杂请求
 https://www.cnblogs.com/clschao/articles/10745966.html
-
-
-
-
-
 '''
-
-
+# 十四 项目实践 --supercrm | rbac 项目
+'''
+转看项目supercrm
+'''
+# 十五 最后补充 -- django models的datefield问题
+'''
+转看项目 datefieldtest
+'''
+# -----完 ----------------
